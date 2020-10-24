@@ -1,28 +1,28 @@
 var questions = [
     {
-        title: "Commonly used data types DO NOT include:",
-        choices: ["strings", "booleans", "alerts", "numbers"],
-        answer: "alerts"
+        title: "Which San Diego brewery makes Space ways IPA?",
+        choices: ["Alesmith", "Pizza Port", "Modern Times", "Mikkeller"],
+        answer: "Modern Times"
     },
     {
-        title: "The condition in an if / else statement is enclosed within ____.",
-        choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-        answer: "parentheses"
+        title: "Which San Diego brewery took Alesmith's original brewery after they relocated?",
+        choices: ["Pure Project", "Eppig", "Mikkeller", "Second Chance"],
+        answer: "Mikkeller"
     },
     {
-        title: "Arrays in Javascript can be used to store ____.",
-        choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
-        answer: "all of the above"
+        title: "Which San Diego brewery has more GABF (Great American Beer Fesival) medals than anyone else in San Diego?",
+        choices: ["Karl Strauss", "Stone", "Alesmith", "Pizza Port"],
+        answer: "Pizza Port"
     },
     {
-        title: "String values must be enclosed within ____ when being assigned to variables.",
-        choices: ["commas", "curly brackets", "quotes", "parenthesis"],
-        answer: "quotes"
+        title: "Which San Diego brewery was sold in 2015 for 1 billon dollars and later resold in 2019 for under 100 million dollars?",
+        choices: ["Stone", "Green Flash", "Ballast Point", "Alpine"],
+        answer: "Ballast Point"
     },
     {
-        title: "A very useful tool for used during development and debugging for printing content to the debugger is:",
-        choices: ["Javascript", "terminal / bash", "for loops", "console log"],
-        answer: "console log"
+        title: "San Diego is best known for what style of beer?",
+        choices: ["Mexican Lager", "Stout", "Pale Ale", "IPA"],
+        answer: "IPA"
     },
 
 ];
@@ -45,7 +45,7 @@ var minusTime = 5;
 
 var newQuestionElement = document.createElement("div");
 
-// starts timer
+// start timer
 timer.addEventListener("click", function () {
     if (timeZero === 0) {
         timeZero = setInterval(function () {
@@ -54,16 +54,16 @@ timer.addEventListener("click", function () {
 
             if (timeLeft <= 0) {
                 clearInterval(timeZero);
-                allDone();
+                complete();
                 time.textContent = "Time's up!";
             }
         }, 1000);
     }
-    render(quizQuestionIndex);
+    exhibit(quizQuestionIndex);
 });
 
 // questions appear 
-function render(questionIndex) {
+function exhibit(questionIndex) {
     // clear data
     questionsArea.innerHTML = "";
     newQuestionElement.innerHTML = "";
@@ -97,7 +97,7 @@ function compare(event) {
             createDiv.textContent = "Correct!";
         
         } else {
-            // Will deduct -5 seconds off secondsLeft for wrong answers
+            // -5 seconds wrong answers
             timeLeft = timeLeft - minusTime;
             createDiv.textContent = "Wrong! The correct answer is:  " + questions[quizQuestionIndex].answer;
         }
@@ -108,16 +108,16 @@ function compare(event) {
 
     if (quizQuestionIndex >= questions.length) {
         // All done will append last page with user stats
-        allDone();
+        complete();
         createDiv.textContent = "You got  " + score + "/" + questions.length + " correct!";
     } else {
-        render(quizQuestionIndex);
+        exhibit(quizQuestionIndex);
     }
     questionsArea.appendChild(createDiv);
 
 }
 // append last page
-function allDone() {
+function complete() {
     questionsArea.innerHTML = "";
     time.innerHTML = "";
 
