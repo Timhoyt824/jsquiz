@@ -1,8 +1,11 @@
-# jsquiz
+# San Diego Beer Quiz 
 
 ## Description 
 This is a quiz built using javascript. I have utilized a bootstrap framework to cut down on styling a quiz from scratch.  
  
+ ## Deployed Site
+
+[SD beer quiz](https://timhoyt824.github.io/jsquiz/)
 
 ## License
 
