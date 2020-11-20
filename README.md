@@ -7,6 +7,10 @@ This is a quiz built using javascript. I have utilized a bootstrap framework to 
 
 [SD beer quiz](https://timhoyt824.github.io/jsquiz/)
 
+## Screenshot
+
+![JavaScript Beer Quiz](jsQuiz.png?raw=true " JavaScript Beer Quiz")
+
 ## License
 
 Copyright <2020> <Tim Hoyt>
